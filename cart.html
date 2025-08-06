@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- BT Link  -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <!-- favicon link  -->
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+</head>
+
+<body class="detail-body">
+    <section class="list">
+        <div class="container">
+            <div class="row">
+                <div class="list-item"></div>
+            </div>
+        </div>
+    </section>
+    <!-- BT Js  -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let listCart = document.querySelector('.list-item');
+
+        cart.forEach(item => {
+            listCart.innerHTML += `
+            <div class = "cartItem col-12 d-flex align-items-center border border-black row">
+               <div class="img d-flex justify-content-center col-4">
+                 <img src = ${item.image} class="border-end border-black"></div>
+                <div class ="col-4 content-name d-flex justify-content-center border-end border-black">
+                    <h3 class=" text-center">${item.name}</h3>
+                </div>
+                <div class="col-4 content-price d-flex justify-content-center ">
+                    <p class="text-center">${item.price} x ${item.quantity} </p>
+                </div>
+            </div>
+            `;
+        });
+    </script>
+</body>
+
+</html>

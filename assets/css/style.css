@@ -1,0 +1,122 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+.text-gradient {
+    color: #3e1d8f;
+    background-image: linear-gradient(45deg, #3A506B, #5A708C, #7A8F9B, #9AAEAB, #BABCBC);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gray {
+    color: #717478;
+}
+
+header .navbar-collapse form i {
+    color: #717478;
+    font-size: 22px;
+}
+
+header .navbar-nav .nav-item i {
+    font-size: 25px;
+}
+
+header .navbar-nav .nav-item a {
+    font-size: 18px;
+}
+
+/* header .navbar-nav ul li i{
+    font-size: 25px;
+} */
+.dropdown-menu {
+    width: 350px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dropdown:hover {
+    background-color: blue;
+    color: whitesmoke;
+}
+
+.dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown:hover .dropdown-toggle {
+    color: whitesmoke;
+}
+
+.slider {
+    overflow-x: hidden;
+}
+
+.slider .slide {
+    transition: transform 0.5s ease-in-out;
+    min-width: 100%;
+    gap: 0;
+}
+
+.slider .slide .slide-images {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider button {
+    cursor: pointer;
+    padding: 30px 10px;
+    border-radius: 5px;
+    border: 0;
+}
+.product-list{
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.product-list .cart .item-details h3 {
+    font-size: large;
+    font-weight: 500;
+}
+
+
+.details .detail .content h2 {
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.details .detail .content h3 {
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.details .detail .content button {
+    border: 0;
+    background-color: #000000;
+    padding: 15px 30px;
+    border-radius: 25px;
+    color: whitesmoke;
+}
+
+.details .title h2 {
+    font-size: 55px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+}
+
+.details .item {
+    text-decoration: none;
+    color: unset;
+}

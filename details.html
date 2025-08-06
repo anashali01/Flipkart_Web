@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- BT Link  -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <!-- favicon link  -->
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+</head>
+
+<body class="detail-body">
+    <section class="details">
+        <div class="container">
+            <div class="row">
+                <div class="detail d-flex justify-content-center align-items-center mb-4">
+                    <div class="img">
+                        <img src="" alt="">
+                    </div>
+                    <div class="content text-center">
+                        <h2 class="name"></h2>
+                        <h3 class="price"></h3>
+                        <p class="description"></p>
+                        <div class="button">
+                            <button>Check Out</button>
+                            <button> Add To Cart<span class="ps-2">
+                                <svg class="w-6 h-6 text-gray-800 dark:text-white"
+                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                                    </svg>
+                                </span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="title text-gradient">
+                    <h2>Similar Products</h2>
+                </div>
+                <div class="product-list align-items-center text-center row g-4"></div>
+            </div>
+        </div>
+    </section>
+    <!-- BT Js  -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let products = null;
+        // Get data of Products from JSON file
+        fetch('products.json')
+            .then(response => response.json())
+            .then(data => {
+                products = data;
+                console.log(products);
+                showDetails();
+            })
+        // find this product 
+        function showDetails() {
+            let details = document.querySelector('.detail');
+            let productId = new URLSearchParams(window.location.search).get('id');  //it search our product id 
+            let thisProduct = products.filter(value => {
+                return value.id == productId;    //if it find it than return that product
+            })[0];
+
+            // If there is no product has id = productId
+            // return to homepage 
+            if (!thisProduct) {
+                window.location.href = "/";
+            }
+
+            //Add data  in html
+            details.querySelector('.img img').src = thisProduct.image;
+            details.querySelector('.name').innerText = thisProduct.name;
+            details.querySelector('.price').innerText = thisProduct.price;
+            details.querySelector('.description').innerText = thisProduct.description;
+
+
+            // Show Another Products 
+            let listProduct = document.querySelector('.product-list');
+            (products.filter(value => value.id != productId))
+                .forEach(product => {
+                    // create cart column
+                    let col = document.createElement("div");
+                    col.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3");
+                    //Create cart wrapper for each cart
+                    let cart = document.createElement('div');
+                    cart.classList.add('cart');
+                    // create new element item for redirect to another page
+                    let newProduct = document.createElement('a');
+                    newProduct.href = `details.html?id=${product.id}`;
+                    newProduct.classList.add('item');
+
+                    // Show data 
+                    newProduct.innerHTML = `
+        <div class="item-image d-flex justify-content-center">
+        <img class="w-100 object-fit-cover h-100" src="${product.image}" alt="${product.name}">
+      </div>
+      <div class="item-details">
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <span class="price">₹${product.price}</span>
+      </div>
+    `;
+                    cart.appendChild(newProduct); // put product in cart
+                    col.appendChild(cart);        // put cart in column
+                    listProduct.appendChild(col); // put column in row
+                })
+        }
+    </script>
+</body>
+
+</html>

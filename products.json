@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "name" : "Nike Air Max",
+        "category" : "Footwear",
+        "price" : "₹120.00",
+        "image":"./assets/img/1.png",
+        "description" : "chair"
+    },
+    {
+        "id":2,
+        "name" : "Cosmetic Set",
+        "category" : "Beauty",
+        "price" : "₹80.00",
+        "image":"./assets/img/2.png",
+        "description" : "A skincare set to glow your beauty"
+    },
+    {
+        "id":3,
+        "name" : "Cosmetic Set",
+        "category" : "Beauty",
+        "price" : "₹20.00",
+        "image":"./assets/img/3.png",
+        "description" : "A skincare set to glow your beauty"
+    },
+    {
+        "id":4,
+        "name" : "Chair",
+        "category" : "Clothing",
+        "price" : "₹50.00",
+        "image":"./assets/img/4.png",
+        "description" : "A classic t-shirt made with 100% cotton."
+    },
+    {
+        "id":5,
+        "name" : "Chair",
+        "category" : "Clothing",
+        "price" : "₹50.00",
+        "image":"./assets/img/4.png",
+        "description" : "A classic t-shirt made with 100% cotton."
+    },
+    {
+        "id":6,
+        "name" : "Cosmetic Set",
+        "category" : "Beauty",
+        "price" : "₹20.00",
+        "image":"./assets/img/3.png",
+        "description" : "A skincare set to glow your beauty"
+    }
+]
