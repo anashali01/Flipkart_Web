@@ -30,15 +30,23 @@ fetch('products.json')
   .then(data => {
     products = data;
     // console.log(products);
-    addDataToHTML();
+    addDataToHTML(productList, "Furniture");
+    addDataToHTML(productList2, "Shoes");
+    addDataToHTML(productList3, "Electronics");
   })
 
 let productList = document.querySelector('.product-list');  //Main class for add data 
-function addDataToHTML() {       //Function for add Data
-  products.forEach((product, index) => {    //ForEach for each cart add
+let productList2 = document.querySelector('.product-list2');  //Main class for add data 
+let productList3 = document.querySelector('.product-list3');  //Main class for add data 
+
+function addDataToHTML(list, category) {
+  let filteredCategory = products.filter(prod => prod.category === category);     //Function for add Data
+
+  filteredCategory.forEach((product, index) => {    //ForEach for each cart add
+
     // create cart column
     let col = document.createElement("div");
-    if (index == 0) col.setAttribute('id', 'slide1');                              //Columns for perfect responsive and our cart in column.
+    // if (index == 0) col.setAttribute('id', 'slide1');                              //Columns for perfect responsive and our cart in column.
     col.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3", "card-slide1");
     //Create cart wrapper for each cart
     let cart = document.createElement('div');           //one div for bg color or target each cart
@@ -56,7 +64,6 @@ function addDataToHTML() {       //Function for add Data
       </div>
       <div class="item-details">
         <h3>${product.name}</h3>
-        <p>${product.description}</p>
         <span class="price me-4">${product.price}</span>
         <button class="mb-4 rounded-4 px-2 border-0 py-2 bg-black text-white AddToCart" >
         <svg class="w-6 h-6 text-gray-800 dark:text-white"
@@ -71,7 +78,7 @@ function addDataToHTML() {       //Function for add Data
     `;
     cart.appendChild(newProduct); // put product in cart
     col.appendChild(cart);        // put cart in column
-    productList.appendChild(col); // put column in row
+    list.appendChild(col); // put column in row
 
 
     // Add to cart
@@ -91,7 +98,31 @@ function addDataToHTML() {       //Function for add Data
       }
     });
   });
-}                                                                 
+}
+
+document.getElementById('scrollLeft').addEventListener("click", () => {
+  productList.scrollBy({ left: -300, behavior: 'smooth' });
+})
+document.getElementById('scrollRight').addEventListener("click", () => {
+  productList.scrollBy({ left: 300, behavior: 'smooth' });
+})
+document.getElementById('scrollLeft2').addEventListener("click", () => {
+  productList2.scrollBy({ left: -300, behavior: 'smooth' });
+})
+document.getElementById('scrollRight2').addEventListener("click", () => {
+  productList2.scrollBy({ left: 300, behavior: 'smooth' });
+})
+document.getElementById('scrollLeft3').addEventListener("click", () => {
+  productList3.scrollBy({ left: -300, behavior: 'smooth' });
+})
+document.getElementById('scrollRight3').addEventListener("click", () => {
+  productList3.scrollBy({ left: 300, behavior: 'smooth' });
+})
+
+
+
+
+
 
 
 

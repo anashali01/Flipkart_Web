@@ -26,10 +26,10 @@
                         <p class="description"></p>
                         <div class="button">
                             <button>Check Out</button>
-                            <button> Add To Cart<span class="ps-2">
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white"
-                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        fill="none" viewBox="0 0 24 24">
+                            <button class="AddtoCart"> Add To Cart<span class="ps-2">
+                                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2"
                                             d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
@@ -48,22 +48,38 @@
     <!-- BT Js  -->
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script>
-        let products = null;
+        let products = [];
+        let mobiles = [];
+        let allProducts = [];
+        let productId = null;
+        let thisProduct = null;
         // Get data of Products from JSON file
         fetch('products.json')
             .then(response => response.json())
             .then(data => {
                 products = data;
                 console.log(products);
-                showDetails();
+                mergeData();
             })
+        fetch('./Each_Product/mobiles.json')
+            .then(response => response.json())
+            .then(data => {
+                mobiles = data;
+                console.log(mobiles);
+                mergeData();
+            })
+        function mergeData(){
+            if(products.length > 0 && mobiles.length > 0){
+                allProducts = [...products , ...mobiles];
+                showDetails();  
+            }
+        }
         // find this product 
         function showDetails() {
             let details = document.querySelector('.detail');
             let productId = new URLSearchParams(window.location.search).get('id');  //it search our product id 
-            let thisProduct = products.filter(value => {
-                return value.id == productId;    //if it find it than return that product
-            })[0];
+            let addtoCart = document.querySelector('.AddtoCart');
+            let thisProduct = allProducts.find(item => item.id == productId);    //if it find it than return that product
 
             // If there is no product has id = productId
             // return to homepage 
@@ -76,12 +92,25 @@
             details.querySelector('.name').innerText = thisProduct.name;
             details.querySelector('.price').innerText = thisProduct.price;
             details.querySelector('.description').innerText = thisProduct.description;
-
+            addtoCart.addEventListener('click', () => {
+                let Cartarr = JSON.parse(localStorage.getItem("cart")) || [];
+                let existing = Cartarr.find(item => item.id == productId);
+                if (existing) {
+                    existing.quantity += 1;
+                } else {
+                    Cartarr.push({ ...thisProduct, quantity: 1 });
+                }
+                localStorage.setItem("cart", JSON.stringify(Cartarr));
+                alert("Item add Successfully");
+            })
 
             // Show Another Products 
             let listProduct = document.querySelector('.product-list');
-            (products.filter(value => value.id != productId))
+            let currentProduct = products.find(product => product.id == productId);
+            let currentCategory = currentProduct.category;
+            (products.filter(value => value.id != productId && value.category === currentCategory))
                 .forEach(product => {
+
                     // create cart column
                     let col = document.createElement("div");
                     col.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-3");
@@ -100,8 +129,7 @@
       </div>
       <div class="item-details">
         <h3>${product.name}</h3>
-        <p>${product.description}</p>
-        <span class="price">₹${product.price}</span>
+        <span class="price">${product.price}</span>
       </div>
     `;
                     cart.appendChild(newProduct); // put product in cart

@@ -79,18 +79,40 @@ header .navbar-nav .nav-item a {
     border-radius: 5px;
     border: 0;
 }
-.product-list{
-    height: 500px;
-    position: relative;
-    overflow: hidden;
+
+.tags {
+    margin: 50px 0px;
 }
 
+.product-list,
+.product-list2,
+.product-list3 {
+    scroll-behavior: smooth;
+}
 
+/* Footer Start */
+.unho a {
+    font-size: 15px !important;
+}
+
+.unho a:hover {
+    text-decoration: underline;
+}
+
+/* Footer End */
 .product-list .cart .item-details h3 {
     font-size: large;
     font-weight: 500;
 }
 
+.list-1 button,
+.list-2 button,
+.list-3 button {
+    border: 0;
+    background-color: #e5e4e4;
+    padding: 25px 4px;
+    border-radius: 5px;
+}
 
 .details .detail .content h2 {
     font-size: 35px;
@@ -119,4 +141,13 @@ header .navbar-nav .nav-item a {
 .details .item {
     text-decoration: none;
     color: unset;
+}
+
+.cartItem {
+    border-color: #981515 !important;
+}
+
+.cartItem .img img {
+    width: 250px;
+    height: 250px;
 }

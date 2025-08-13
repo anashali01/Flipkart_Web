@@ -1,50 +1,162 @@
 [
-    {
-        "id":1,
-        "name" : "Nike Air Max",
-        "category" : "Footwear",
-        "price" : "₹120.00",
-        "image":"./assets/img/1.png",
-        "description" : "chair"
-    },
-    {
-        "id":2,
-        "name" : "Cosmetic Set",
-        "category" : "Beauty",
-        "price" : "₹80.00",
-        "image":"./assets/img/2.png",
-        "description" : "A skincare set to glow your beauty"
-    },
-    {
-        "id":3,
-        "name" : "Cosmetic Set",
-        "category" : "Beauty",
-        "price" : "₹20.00",
-        "image":"./assets/img/3.png",
-        "description" : "A skincare set to glow your beauty"
-    },
-    {
-        "id":4,
-        "name" : "Chair",
-        "category" : "Clothing",
-        "price" : "₹50.00",
-        "image":"./assets/img/4.png",
-        "description" : "A classic t-shirt made with 100% cotton."
-    },
-    {
-        "id":5,
-        "name" : "Chair",
-        "category" : "Clothing",
-        "price" : "₹50.00",
-        "image":"./assets/img/4.png",
-        "description" : "A classic t-shirt made with 100% cotton."
-    },
-    {
-        "id":6,
-        "name" : "Cosmetic Set",
-        "category" : "Beauty",
-        "price" : "₹20.00",
-        "image":"./assets/img/3.png",
-        "description" : "A skincare set to glow your beauty"
-    }
+  {
+    "id": 1,
+    "name": "Modern Fabric Armchair",
+    "category": "Furniture",
+    "price": "₹4,999",
+    "image": "./assets/img/1.png",
+    "description": "A sleek fabric armchair with a sturdy wooden frame and cushioned seat. Perfect for adding style and comfort to your living room or office."
+  },
+  {
+    "id": 2,
+    "name": "Contemporary Wingback Chair",
+    "category": "Furniture",
+    "price": "₹6,499",
+    "image": "./assets/img/2.png",
+    "description": "This wingback chair features a bold design with soft fabric upholstery and gold-tone legs, making it a statement piece for any modern home."
+  },
+  {
+    "id": 3,
+    "name": "Minimalist Wooden Dining Chair",
+    "category": "Furniture",
+    "price": "₹2,299",
+    "image": "./assets/img/3.png",
+    "description": "Lightweight and stylish, this minimalist wooden dining chair blends seamlessly with any dining setup while offering excellent durability."
+  },
+  {
+    "id": 4,
+    "name": "Plush Lounge Chair",
+    "category": "Furniture",
+    "price": "₹5,799",
+    "image": "./assets/img/4.png",
+    "description": "A lounge chair with soft cushioning and a wooden frame, ideal for relaxing in style whether indoors or on your balcony."
+  },
+  {
+    "id": 5,
+    "name": "Premium Leather Armchair",
+    "category": "Furniture",
+    "price": "₹7,999",
+    "image": "./assets/img/5.png",
+    "description": "Crafted with premium leather and a strong wooden structure, this armchair combines luxury and comfort for any living space."
+  },
+  {
+    "id": 6,
+    "name": "Vintage Wooden Chair",
+    "category": "Furniture",
+    "price": "₹3,499",
+    "image": "./assets/img/6.png",
+    "description": "A vintage-inspired wooden chair with a cushioned seat and backrest. Perfect for adding a classic touch to your interiors."
+  },
+  {
+    "id": 7,
+    "name": "Matte Black Wooden Chair",
+    "category": "Furniture",
+    "price": "₹3,799",
+    "image": "./assets/img/7.png",
+    "description": "Bold and modern, this matte black wooden chair is perfect for dining areas, cafés, or home offices."
+  },
+  {
+    "id": 8,
+    "name": "Scandinavian Style Chair",
+    "category": "Furniture",
+    "price": "₹4,299",
+    "image": "./assets/img/8.png",
+    "description": "This Scandinavian-style wooden chair with a curved backrest offers both elegance and comfort for any modern living space."
+  },
+  {
+    "id": 9,
+    "name": "Sport Runner Shoes",
+    "category": "Shoes",
+    "price": 2499,
+    "description": "Lightweight running shoes designed for speed and comfort.",
+    "image": "./assets/img/shoe-1.png"
+  },
+  {
+    "id": 10,
+    "name": "Classic White Sneakers",
+    "category": "Shoes",
+    "price": 1999,
+    "description": "Timeless white sneakers perfect for casual wear.",
+    "image": "./assets/img/shoe-2.png"
+  },
+  {
+    "id": 11,
+    "name": "High-Top Canvas Shoes",
+    "category": "Shoes",
+    "price": 1799,
+    "description": "Trendy high-top canvas shoes for everyday style.",
+    "image": "./assets/img/shoe-3.png"
+  },
+  {
+    "id": 12,
+    "name": "Leather Formal Shoes",
+    "category": "Shoes",
+    "price": 3299,
+    "description": "Elegant leather shoes for formal and office wear.",
+    "image": "./assets/img/shoe-4.png"
+  },
+  {
+    "id": 13,
+    "name": "Trail Hiking Boots",
+    "category": "Shoes",
+    "price": 2899,
+    "description": "Durable hiking boots built for outdoor adventures.",
+    "image": "./assets/img/shoe-5.png"
+  },
+  {
+    "id": 14,
+    "name": "Slip-On Loafers",
+    "category": "Shoes",
+    "price": 1599,
+    "description": "Comfortable slip-on loafers with a sleek design.",
+    "image": "./assets/img/shoe-6.png"
+  },
+  {
+    "id": 15,
+    "name": "Basketball Performance Shoes",
+    "category": "Shoes",
+    "price": 3499,
+    "description": "High-grip basketball shoes for maximum court performance.",
+    "image": "./assets/img/shoe-7.png"
+  },
+  {
+    "id": 16,
+    "name": "ROG Swift Gaming Monitor",
+    "category": "Electronics",
+    "price": 45999,
+    "description": "High refresh rate gaming monitor with ultra-low latency for smooth gameplay.",
+    "image": "./assets/img/electronic-1.webp"
+  },
+  {
+    "id": 17,
+    "name": "ROG Strix 2K Monitor",
+    "category": "Electronics",
+    "price": 32999,
+    "description": "2K resolution monitor with HDR support for vibrant visuals.",
+    "image": "./assets/img/electronic-2.webp"
+  },
+  {
+    "id": 18,
+    "name": "ROG Gaming PC",
+    "category": "Electronics",
+    "price": 129999,
+    "description": "High-performance desktop PC with advanced cooling and powerful GPU.",
+    "image": "./assets/img/electronic-3.webp"
+  },
+  {
+    "id": 19,
+    "name": "ROG Zephyrus Gaming Laptop",
+    "category": "Electronics",
+    "price": 159999,
+    "description": "Portable gaming laptop with high-end specs for serious gamers.",
+    "image": "./assets/img/electronic-5.png"
+  },
+  {
+    "id": 20,
+    "name": "Sony PS5 Controller Spider-Man Edition",
+    "category": "Electronics",
+    "price": 6999,
+    "description": "Limited edition PS5 controller featuring Spider-Man design.",
+    "image": "./assets/img/electronic-10.jpeg"
+  }
 ]
