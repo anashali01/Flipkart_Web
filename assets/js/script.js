@@ -1,3 +1,4 @@
+// Hero Section Slider 
 const track = document.querySelector(".slider .slide");
 const next = document.querySelector(".slider .next");
 const prev = document.querySelector(".slider .prev");
@@ -35,6 +36,7 @@ fetch('products.json')
     addDataToHTML(productList3, "Electronics");
   })
 
+// 3 variables For 3 sections 
 let productList = document.querySelector('.product-list');  //Main class for add data 
 let productList2 = document.querySelector('.product-list2');  //Main class for add data 
 let productList3 = document.querySelector('.product-list3');  //Main class for add data 
@@ -67,12 +69,12 @@ function addDataToHTML(list, category) {
         <span class="price me-4">${product.price}</span>
         <button class="mb-4 rounded-4 px-2 border-0 py-2 bg-black text-white AddToCart" >
         <svg class="w-6 h-6 text-gray-800 dark:text-white"
-                                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                        fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                    </svg>
+                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+          </svg>
         </button>
       </div>
     `;
@@ -82,7 +84,7 @@ function addDataToHTML(list, category) {
 
 
     // Add to cart
-    document.querySelectorAll(".AddToCart").forEach((btn, index) => {
+    document.querySelectorAll(".AddToCart").forEach((btn, index) => {    //Take each button with it index 
       btn.onclick = function (e) {
         e.preventDefault();
         let cartArr = JSON.parse(localStorage.getItem("cart")) || [];     //The first time, cartArr will be an empty array.
@@ -100,18 +102,22 @@ function addDataToHTML(list, category) {
   });
 }
 
+
+// cart slider for 1 section
 document.getElementById('scrollLeft').addEventListener("click", () => {
   productList.scrollBy({ left: -300, behavior: 'smooth' });
 })
 document.getElementById('scrollRight').addEventListener("click", () => {
   productList.scrollBy({ left: 300, behavior: 'smooth' });
 })
+// cart slider for 2 section 
 document.getElementById('scrollLeft2').addEventListener("click", () => {
   productList2.scrollBy({ left: -300, behavior: 'smooth' });
 })
 document.getElementById('scrollRight2').addEventListener("click", () => {
   productList2.scrollBy({ left: 300, behavior: 'smooth' });
 })
+// cart slider for 3 section 
 document.getElementById('scrollLeft3').addEventListener("click", () => {
   productList3.scrollBy({ left: -300, behavior: 'smooth' });
 })
